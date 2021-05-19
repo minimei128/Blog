@@ -1,12 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
+
 
 const BlogContext = React.createContext();
 
+//a source to provide data to all child components
 export const BlogProvider = ({children}) => {
-  return <BlogContext.Provider>
+  
+  const blogPosts = [{title: 'Blog Post #1'}, {title: 'Blog Post #2'}]
+  
+  
+  return (
+  
+  <BlogContext.Provider value={blogPosts}>
     {children}
   </BlogContext.Provider>
-};
+  )};
 
 export default BlogContext;
